@@ -16,6 +16,7 @@ import java.util.Enumeration;
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
 
+    // Post 요청에도 파라미터로 받아 읽어올 수 있다.
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("RequestParamServlet.service\n");
