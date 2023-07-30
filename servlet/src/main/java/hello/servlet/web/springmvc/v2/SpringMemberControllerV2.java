@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
-@RequestMapping("/springmvc/v2/members/")
+@RequestMapping("/springmvc/v2/members")
 public class SpringMemberControllerV2 {
 
     private MemberRepository memberRepository = MemberRepository.getInstance();
@@ -36,7 +36,7 @@ public class SpringMemberControllerV2 {
         return mv;
     }
 
-    @RequestMapping("/")
+    @RequestMapping
     public ModelAndView list() {
 
         List<Member> members = memberRepository.findAll();
