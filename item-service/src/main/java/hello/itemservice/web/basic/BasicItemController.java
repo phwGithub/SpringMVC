@@ -81,13 +81,22 @@ public class BasicItemController {
         return "basic/item";
     }
 
-    @PostMapping("/add")
+    // @PostMapping("/add")
     public String addItemV4(Item item) {
 
         // @ModelAttribute는 객체를 받을 때 생략 가능하다
         itemRepository.save(item);
 
         return "basic/item";
+    }
+
+    @PostMapping("/add")
+    public String addItemV5(Item item) {
+
+        itemRepository.save(item);
+
+        // POST/Redirect/GET 패턴 적용
+        return "redirect:/basic/items/" + item.getId();
     }
 
     @GetMapping("/{itemId}/edit")
