@@ -72,6 +72,7 @@ public class FormItemController {
         log.info("item.open={}", item.getOpen());
         log.info("item.regions={}", item.getRegions());
         log.info("item.itemType={}", item.getItemType());
+        log.info("item.deliveryCode={}", item.getDeliveryCode());
 
         Item savedItem = itemRepository.save(item);
         redirectAttributes.addAttribute("itemId", savedItem.getId());
